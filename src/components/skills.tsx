@@ -88,7 +88,6 @@ const Skills = () => {
                   key={key}
                   value={key}
                 >
-                  {category.icon}
                   {category.title}
                 </TabsTrigger>
               ))}
