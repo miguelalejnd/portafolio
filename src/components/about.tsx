@@ -21,22 +21,24 @@ const About = () => {
             </Badge> */}
             <ProfileImage className="mt-3 mb-8 block md:hidden" />
             <h2 className="text-4xl font-bold mb-4 tracking-tight">
-              Apasionado por la creaci&oacute;n de software que sirva a las personas.
+              Un poco sobre qui&eacute;n soy
             </h2>
             <p className="text-muted-foreground mb-6 text-justify">
-              En mi carrera profesional me he enfocado en el desarrollo
-              de aplicaciones empresariales optimas.
-              Mi experiencia incluye Spring Boot, React y arquitectura en la nube.
-              Me apasiona crear soluciones elegantes a problemas complejos,
-              adquirir y compartir conocimientos con la comunidad de desarrolladores.
+              Soy ingeniero de sistemas inform&aacute;ticos con foco en construir soluciones que resuelven problemas reales. En desarrollo me especializo como Full-Stack con Java, Spring Boot y React, y disfruto igualmente del lado DevOps; automatizar despliegues, gestionar infraestructura cloud, mantener sistemas Linux y redes.
+            </p>
+            <p className="text-muted-foreground mb-6 text-justify">
+              Creo que el buen software no es solo el que funciona, sino el que puede entenderse, mantenerse y evolucionar. Por eso me importa escribir código limpio.
+            </p>
+            <p className="text-muted-foreground mb-6 text-justify">
+              Me gusta tabajar en equipo pues permite compartir conocimientos y aprender de otros. Siempre estoy buscando nuevas oportunidades para crecer como profesional.
             </p>
             <div className="flex flex-wrap gap-4 justify-start">
               <Button className="rounded-full">
-                <a href="http://github.com/miguelalejnd"  target="_blank"> Ver Github</a>
+                <a href="http://github.com/miguelalejnd"  target="_blank"> Ver mi Github</a>
               </Button>
               <Button variant="outline" className="rounded-full">
                 <Download />
-                <a href="CV-MiguelLopez-2026.pdf" target="_blank" download="CV-MiguelLopez-2026.pdf">Descargar CV</a>
+                <a href="CV-MiguelLopez-2026.pdf" target="_blank" download="CV-MiguelLopez-2026.pdf">Descargar mi CV</a>
               </Button>
             </div>
           </div>
