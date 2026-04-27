@@ -1,7 +1,8 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
-import { ProjectCarousel } from "./carousel";
+import { ProjectCarousel } from "@/components/carousel";
+import { GithubLogo } from "@/components/ui/icons";
 // images
 import robin from "@/assets/project-carousel-images/robin.jpg";
 import gorrion from "@/assets/project-carousel-images/gorrion.jpg";
@@ -63,8 +64,8 @@ const ProjectCard = ({
               asChild
             >
               <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-                <p className="mr-1 h-4 w-4" />github
-                View Code
+                <GithubLogo />
+                Ver c&oacute;digo
               </a>
             </Button>
           )}
