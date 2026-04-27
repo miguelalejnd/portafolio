@@ -47,7 +47,7 @@ const ProjectCard = ({
         </div>
 
         {/* Actions */}
-        <div className="flex gap-3 mt-auto">
+        <div className="flex flex-col md:flex-row gap-3 mt-auto">
           {liveUrl && (
             <Button variant="default" className="rounded-full" asChild>
               <a href={liveUrl} target="_blank" rel="noopener noreferrer">
