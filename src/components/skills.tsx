@@ -23,7 +23,6 @@ const skillCategories = {
       { name: 'Spring Boot', },
       { name: 'Spring Security', },
       { name: 'Spring JPA', },
-      { name: 'PHP + Laravel', },
     ]
   },
   Databases: {
@@ -58,7 +57,7 @@ const skillCategories = {
     icon: <Cloud className="w-5 h-5" />,
     title: 'Cloud',
     skills: [
-      { name: 'AWS', },
+      { name: 'Azure', },
     ]
   }
 };
@@ -77,7 +76,7 @@ const Skills = () => {
             Habilidades t&eacute;cnicas
           </h2>
           <p className="text-muted-foreground mt-2 sm:mt-4 text-lg">
-            Tecnolog&iacute;as y herramientas con las que trabajo habitualmente.
+            Tecnolog&iacute;as y herramientas que domino y utilizo en mis proyectos.
           </p>
         </div>
         <div>
