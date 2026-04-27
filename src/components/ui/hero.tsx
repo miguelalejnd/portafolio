@@ -25,7 +25,7 @@ const Hero = () => {
             &iexcl;Bienvenido!
         </h1>
         <p className="mt-6 text-[17px] md:text-lg">
-          Hola, soy Miguel, un desarrollador web Full-Stack con Java y Spring; React y JavaScript/TypeScript. Poseo conocimientos en gestión de infraestructura cloud, contenerización con Docker, Podman, Kubernetes, y administración de sistemas Linux.
+          Hola, soy Miguel. Construyo aplicaciones web robustas de principio a fin: desde APIs en Java y Spring Boot hasta interfaces modernas con React y TypeScript. Tambi&eacute;n me muevo con soltura en el mundo DevOps: Docker, Kubernetes y entornos Linux son parte de mi d&iacute;a a d&iacute;a.
         </p>
         <div className="mt-12 flex items-center justify-center gap-4">
           <Button size="lg" className="rounded-full text-base" asChild>
