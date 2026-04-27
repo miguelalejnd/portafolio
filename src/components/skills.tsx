@@ -107,7 +107,7 @@ const Skills = () => {
                       {category.skills.map((skill, index) => (
                         <div
                           key={index}
-                          className="flex items-center justify-between p-4 border rounded-lg border-accent transition-all hover:border-primary/50"
+                          className="flex items-center justify-between p-1 border rounded-full bg-accent"
                         >
                           <div className="p-4 mx-auto">
                             <p className="font-semibold text-sm">{skill.name}</p>
