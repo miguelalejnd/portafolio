@@ -7,15 +7,13 @@ import { Textarea } from "@/components/ui/textarea"
 import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogMedia, AlertDialogTitle } from "@/components/ui/alert-dialog"
 import { MailCheck } from "lucide-react"
 import { Spinner } from "./ui/spinner"
-import { set, useForm, type SubmitHandler } from "react-hook-form"
+import { useForm, type SubmitHandler } from "react-hook-form"
 
 type FormFields = {
   name: string;
   email: string;
   message: string;
 };
-
-const wait = (ms:number) => new Promise(resolve => setTimeout(resolve, ms));
 
 const Contact = () => {
 
