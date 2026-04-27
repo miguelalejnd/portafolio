@@ -48,7 +48,7 @@ const Footer = () => {
           </span>
 
           <div className="flex items-center gap-5 text-muted-foreground">
-            <a href="#" target="_blank">
+            <a href="https://www.linkedin.com/in/alejnd/" target="_blank">
               <Linkedin className="h-5 w-5" />
             </a>
           </div>
