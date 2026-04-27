@@ -7,12 +7,16 @@ const footerLinks = [
     href: "#about",
   },
   {
-    title: "Experiencia",
-    href: "#experience",
+    title: "Habilidades",
+    href: "#skills",
   },
   {
-    title: "Projectos",
+    title: "Proyectos",
     href: "#projects",
+  },
+  {
+    title: "Contacto",
+    href: "#contact",
   },
 ];
 
