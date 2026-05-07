@@ -8,7 +8,7 @@ export const ProjectCarousel = ({images}: ProjectCarouselProps) => {
 
   return (
       <Carousel className="relative">
-        <CarouselContent>
+        <CarouselContent className="flex items-center">
           {images.map((ImageSrc, index) => (
             <CarouselItem key={ImageSrc}>
               <img

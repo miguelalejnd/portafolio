@@ -7,30 +7,94 @@ import { GithubLogo } from "@/components/ui/icons";
 import robin from "@/assets/project-carousel-images/robin.jpg";
 import gorrion from "@/assets/project-carousel-images/gorrion.jpg";
 
-const carouselImages: string[] = [robin, gorrion];
+import nuevaVenta from "@/assets/project-carousel-images/csg/nueva-venta.png";
+import detalleVenta from "@/assets/project-carousel-images/csg/detalles-de-la-venta.png";
+import editarArticulo from "@/assets/project-carousel-images/csg/editar-artículo.png";
+import servicios from "@/assets/project-carousel-images/csg/servicios.png";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { useState } from "react";
 
-interface ProjectCardProps {
+const carouselImages: string[] = [robin, gorrion];
+const csgImages: string[] = [nuevaVenta, detalleVenta, editarArticulo, servicios];
+
+type ProjectCardProps = {
   title: string;
   description: string;
+  problem?: string;
+  solution?: string;
+  impact?: string;
+  functionalities?: string[];
+  learning?: string;
   images: string[];
   technologies: string[];
   liveUrl?: string;
   githubUrl?: string;
 }
 
+type ProjectCardPropsWitthExtras = ProjectCardProps & {
+  setSelectedProject: (project: ProjectCardProps | null) => void;
+  setOpen: (open: boolean) => void;
+}
+
+const projects = [
+  {
+    title: "Sistema de gestión de contrataciones",
+    description:
+      "Plataforma para automatizar el proceso de contratación de docentes en la FIA-UES.",
+    problem:
+      "El proceso de contratación de docentes era manual, ineficiente y propenso a errores, lo que resultaba en retrasos y dificultades para gestionar las solicitudes.",
+    solution:
+      "Desarrollo de una plataforma web que automatiza el proceso de contratación, permitiendo a los docentes postularse en línea, a los administradores revisar y gestionar las solicitudes de manera eficiente.",
+    impact:
+      "Reduje el tiempo de contratación y mejoré la satisfacción tanto de los docentes como de los administradores al proporcionar una experiencia más fluida y transparente.",
+    functionalities: ["Gestión de solicitudes", "Revisión y aprobación", "Notificaciones automáticas"],
+    learning: 
+      "Aprendí a diseñar e implementar un sistema completo utilizando React para el frontend y Laravel para el backend, además de mejorar mis habilidades en gestión de proyectos y comunicación con stakeholders.",
+    images: carouselImages,
+    technologies: ["React", "TypeScript", "React Router", "Redux", "Laravel", "PostgreSQL"],
+    liveUrl: "https://ecommerce-demo.com",
+    githubUrl: "https://github.com/username/ecommerce",
+  },
+  {
+    title: "Sistema de inventario, compras y ventas para centro de servicios para motocicletas",
+    description:
+      "Plataforma de gestión de inventario PEPS, registro de compras y ventas que reflejan costos reales y utilidades precisas al momento.",
+    problem: 
+      "La empresa enfrentaba dificultades para gestionar su inventario, realizar un seguimiento de las compras y ventas, y calcular los costos y beneficios de manera precisa, lo que afectaba su eficiencia operativa y rentabilidad.",
+    solution:
+      "Desarrollo de un app web que permita a los usuarios gestionar el inventario, registrar compras y ventas, y calcular automáticamente los costos y beneficios utilizando el método de valuación de inventario PEPS.",
+    impact:
+      "La herramienta mejoró la eficiencia operativa de la empresa ya que facilitó la gestión del inventario y las transacciones, lo que resultó en una mejor toma de decisiones y aumento de la rentabilidad.",
+    functionalities: ["Gestión de inventario.", "Registro de compras y ventas.", "Cálculo automático de costos y beneficios.", "Gestión de catalogos.", "Gestión de usuarios."],
+    learning: 
+      "Reforzamiento mi conocimiento de Spring Boot para el backend y aprendí el uso de Thymeleaf para el frontend, además de mejorar mis habilidades en gestión de proyectos y comunicación con stakeholders.",
+    images: csgImages,
+    technologies: ["Spring Boot", "Spring MVC", "Spring Security", "Spring JPA", "Thymeleaf", "PostgreSQL"],
+    liveUrl: "https://ai-taskmanager.com",
+    githubUrl: "https://github.com/username/ai-taskmanager",
+  },
+];
+
 const ProjectCard = ({
   title,
   description,
+  problem,
+  solution,
+  impact,
+  functionalities,
+  learning,
   images,
   technologies,
   liveUrl,
   githubUrl,
-}: ProjectCardProps) => {
+  setSelectedProject,
+  setOpen,
+}: ProjectCardPropsWitthExtras) => {
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-xl border border-accent">
       {/* Project Image */}
-      <div className="relative h-64 overflow-hidden bg-accent">
-        <ProjectCarousel images={images}/>
+      <div className="flex items-center relative h-64 overflow-hidden bg-accent">
+        <ProjectCarousel images={images} />
       </div>
 
       {/* Content */}
@@ -48,7 +112,17 @@ const ProjectCard = ({
         </div>
 
         {/* Actions */}
-        <div className="flex flex-col md:flex-row gap-3 mt-auto">
+        <div className="flex flex-col gap-3 mt-auto">
+          <Button
+            variant="outline"
+            className="rounded-full shadow-none"
+            onClick={() => {
+              setSelectedProject({ title, description, images, technologies, liveUrl, githubUrl, problem, solution, impact, learning, functionalities })
+              setOpen(true)
+            }}
+          >
+            Ver detalles
+          </Button>
           {liveUrl && (
             <Button variant="default" className="rounded-full" asChild>
               <a href={liveUrl} target="_blank" rel="noopener noreferrer">
@@ -76,50 +150,113 @@ const ProjectCard = ({
 };
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "Gestión de contrataciones",
-      description:
-        "Plataforma para automatizar el proceso de contratación de docentes en la facultad de inegiería y arquitectura de la UES.",
-      images: carouselImages,
-      technologies: ["React", "TypeScript", "React Router", "Redux", "Laravel", "PostgreSQL"],
-      liveUrl: "https://ecommerce-demo.com",
-      githubUrl: "https://github.com/username/ecommerce",
-    },
-    {
-      title: "Inventario, compras y ventas para centro de servicios para motocicletas",
-      description:
-        "Una app web que gestiona inventario, compras y ventas aplicando valuación de inventario PEPS proporcionando cálculo de costos y beneficios de ventas al momento.",
-      images: carouselImages,
-      technologies: ["Spring Boot", "Spring MVC", "Spring Security", "Spring JPA", "Thymeleaf", "PostgreSQL"],
-      liveUrl: "https://ai-taskmanager.com",
-      githubUrl: "https://github.com/username/ai-taskmanager",
-    },
-  ];
+  const [open, setOpen] = useState<boolean>(false);
+  const [selectedProject, setSelectedProject] = useState<ProjectCardProps | null>(null);
 
   return (
-    <section id="projects" className="relative py-20 px-6">
-      <div className="max-w-screen-md mx-auto">
-        <div className="text-center mb-12">
-          <Badge variant="secondary" className="my-4">
-            Proyectos
-          </Badge>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
-            Proyectos destacados
+    <>
+      <section id="projects" className="relative py-20 px-6">
+        <div className="max-w-screen-md mx-auto">
+          <div className="text-center mb-12">
+            <Badge variant="secondary" className="my-4">
+              Proyectos
+            </Badge>
+            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
+              Proyectos destacados
+            </h2>
+            <p className="text-muted-foreground mt-2 sm:mt-4 text-lg">
+              Revise algunos de mis proyectos.
+            </p>
+          </div>
 
-          </h2>
-          <p className="text-muted-foreground mt-2 sm:mt-4 text-lg">
-            Revise algunos de mis proyectos.
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projects.map((project, index) => (
+              <ProjectCard key={index} setSelectedProject={setSelectedProject} setOpen={setOpen} {...project} />
+            ))}
+          </div>
         </div>
+      </section>
+      {/* Full-screen lightbox */}
+        <Dialog open={open} onOpenChange={setOpen}>
+          <DialogContent className='flex flex-col justify-between gap-0 p-0 overflow-hidden h-[calc(100vh-3rem)] min-w-[calc(100vw-1rem)] xl:min-w-[calc(100vw-3rem)]'>
+            <DialogHeader className="px-3 py-4 shadow-sm">
+              <DialogTitle>{selectedProject?.title}</DialogTitle>
+            </DialogHeader>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
-          ))}
-        </div>
-      </div>
-    </section>
+            <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 overflow-auto p-3">
+              <div className="flex items-center xl:col-span-2 p-0">
+                <ProjectCarousel images={selectedProject?.images as string[]} />
+              </div>
+              <div className='[&_strong]:text-foreground space-y-4 [&_strong]:font-semibold'>
+                <div className='space-y-1'>
+                  <p>
+                    <strong>Descripci&oacute;n:</strong>
+                  </p>
+                  <p>
+                    {selectedProject?.description as string}
+                  </p>
+                </div>
+                <div className='space-y-1'>
+                  <p>
+                    <strong>Problema / Contexto:</strong>
+                  </p>
+                  <p>
+                    {selectedProject?.problem as string}
+                  </p>
+                </div>
+                <div className='space-y-1'>
+                  <p>
+                    <strong>Soluci&oacute;n propuesta:</strong>
+                  </p>
+                  <p>
+                    {selectedProject?.solution as string}
+                  </p>
+                </div>
+                <div className='space-y-1'>
+                  <p>
+                    <strong>Resultados:</strong>
+                  </p>
+                  <p>
+                    {selectedProject?.impact as string}
+                  </p>
+                </div>
+                <div className='space-y-1'>
+                  <p>
+                    <strong>Caracter&iacute;sticas principales:</strong>
+                  </p>
+                  <ul>
+                    {selectedProject?.functionalities?.map((func, index) => (
+                      <li key={index}>{func}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className='space-y-1'>
+                  <p>
+                    <strong>Desaf&iacute;os y aprendizajes:</strong>
+                  </p>
+                  <p>
+                    {selectedProject?.learning as string}
+                  </p>
+                </div>
+                <div className='space-y-1'>
+                  <p>
+                    <strong>Stack tecnol&oacute;gico:</strong>
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {selectedProject?.technologies.map((tech) => (
+                      <Badge key={tech} variant="secondary" className="rounded-full">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div></div>
+          </DialogContent>
+        </Dialog>
+      </>
   );
 };
 
