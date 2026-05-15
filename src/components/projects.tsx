@@ -77,7 +77,7 @@ const projects = [
     technologies: ["React", "TypeScript", "React Router", "Redux", "Laravel", "PostgreSQL"],
   },
   {
-    title: "Sistema de inventario, compras y ventas para centro de servicios para motocicletas",
+    title: "Sistema de inventario, compras y ventas para empresa CSGARAGE",
     description:
       "Plataforma de gestión de inventario PEPS, registro de compras y ventas que reflejan costos reales y utilidades precisas al momento.",
     problem: 
