@@ -7,14 +7,14 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 export const ProjectCarousel = ({images}: ProjectCarouselProps) => {
 
   return (
-      <Carousel className="relative">
-        <CarouselContent className="flex items-center">
+      <Carousel className="xl:col-span-2 overflow-clip">
+        <CarouselContent>
           {images.map((ImageSrc, index) => (
             <CarouselItem key={ImageSrc}>
               <img
                   src={ImageSrc}
                   alt={`Slide ${index + 1}`}
-                  className="object-cover"
+                  className="mx-auto w-full h-8/8 object-contain"
                 />
             </CarouselItem>
           ))}

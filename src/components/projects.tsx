@@ -3,19 +3,42 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import { ProjectCarousel } from "@/components/carousel";
 import { GithubLogo } from "@/components/ui/icons";
-// images
-import robin from "@/assets/project-carousel-images/robin.jpg";
-import gorrion from "@/assets/project-carousel-images/gorrion.jpg";
-
-import nuevaVenta from "@/assets/project-carousel-images/csg/nueva-venta.png";
-import detalleVenta from "@/assets/project-carousel-images/csg/detalles-de-la-venta.png";
-import editarArticulo from "@/assets/project-carousel-images/csg/editar-artículo.png";
-import servicios from "@/assets/project-carousel-images/csg/servicios.png";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { useState } from "react";
 
-const carouselImages: string[] = [robin, gorrion];
-const csgImages: string[] = [nuevaVenta, detalleVenta, editarArticulo, servicios];
+/* images for projects */
+
+// 1. sgc:
+import loginSGC from "@/assets/project-carousel-images/sgc/login.png";
+
+// 2. csg:
+import loginCSG from "@/assets/project-carousel-images/csg/login.png";
+import allPurchases from "@/assets/project-carousel-images/csg/all-purchases.png";
+import newPurchases from "@/assets/project-carousel-images/csg/new-purchase.png";
+import allSales from "@/assets/project-carousel-images/csg/all-sales.png";
+import newSale1 from "@/assets/project-carousel-images/csg/new-sale1.png";
+import newSale2 from "@/assets/project-carousel-images/csg/new-sale2.png";
+import newSale3 from "@/assets/project-carousel-images/csg/new-sale3.png";
+import detailsSale from "@/assets/project-carousel-images/csg/details-sale.png";
+import allItems from "@/assets/project-carousel-images/csg/all-items.png";
+import allCustomers from "@/assets/project-carousel-images/csg/all-customers.png";
+import newCustomer from "@/assets/project-carousel-images/csg/new-customer.png";
+
+const carouselImages: string[] = [loginSGC, ];
+
+const csgImages: string[] = [
+  loginCSG,
+  allPurchases,
+  newPurchases,
+  allSales,
+  newSale1,
+  newSale2,
+  newSale3,
+  detailsSale,
+  allItems,
+  allCustomers,
+  newCustomer,
+];
 
 type ProjectCardProps = {
   title: string;
@@ -52,8 +75,6 @@ const projects = [
       "Aprendí a diseñar e implementar un sistema completo utilizando React para el frontend y Laravel para el backend, además de mejorar mis habilidades en gestión de proyectos y comunicación con stakeholders.",
     images: carouselImages,
     technologies: ["React", "TypeScript", "React Router", "Redux", "Laravel", "PostgreSQL"],
-    liveUrl: "https://ecommerce-demo.com",
-    githubUrl: "https://github.com/username/ecommerce",
   },
   {
     title: "Sistema de inventario, compras y ventas para centro de servicios para motocicletas",
@@ -70,8 +91,8 @@ const projects = [
       "Reforzamiento mi conocimiento de Spring Boot para el backend y aprendí el uso de Thymeleaf para el frontend, además de mejorar mis habilidades en gestión de proyectos y comunicación con stakeholders.",
     images: csgImages,
     technologies: ["Spring Boot", "Spring MVC", "Spring Security", "Spring JPA", "Thymeleaf", "PostgreSQL"],
-    liveUrl: "https://ai-taskmanager.com",
-    githubUrl: "https://github.com/username/ai-taskmanager",
+    liveUrl: "https://example.com",
+    //githubUrl: "https://github.com/username/ai-taskmanager",
   },
 ];
 
@@ -93,8 +114,12 @@ const ProjectCard = ({
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-xl border border-accent">
       {/* Project Image */}
-      <div className="flex items-center relative h-64 overflow-hidden bg-accent">
-        <ProjectCarousel images={images} />
+      <div className="relative h-64">
+        <img
+          src={images[0]}
+          alt={title}
+          className="object-cover w-full h-full"
+        />
       </div>
 
       {/* Content */}
@@ -178,16 +203,19 @@ const Projects = () => {
       </section>
       {/* Full-screen lightbox */}
         <Dialog open={open} onOpenChange={setOpen}>
-          <DialogContent className='flex flex-col justify-between gap-0 p-0 overflow-hidden h-[calc(100vh-3rem)] min-w-[calc(100vw-1rem)] xl:min-w-[calc(100vw-3rem)]'>
-            <DialogHeader className="px-3 py-4 shadow-sm">
-              <DialogTitle>{selectedProject?.title}</DialogTitle>
-            </DialogHeader>
+          <DialogContent className='flex flex-col justify-center p-0 gap-0 h-[calc(100vh-4rem)] min-w-[calc(100vw-1rem)] xl:min-w-[calc(100vw-4rem)]'>
 
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 overflow-auto p-3">
-              <div className="flex items-center xl:col-span-2 p-0">
+            <div className="grid grid-cols-1 items-center xl:grid-cols-3 gap-4 p-4 pt-12 xl:pt-4 overflow-auto">
+              {/* <div className="flex items-center xl:col-span-2 p-0"> */}
                 <ProjectCarousel images={selectedProject?.images as string[]} />
-              </div>
-              <div className='[&_strong]:text-foreground space-y-4 [&_strong]:font-semibold'>
+              {/* </div> */}
+              <div className='[&_strong]:text-foreground h-fit space-y-4 [&_strong]:font-semibold'>
+                <div className='space-y-1 text-lg'>
+                  <p>
+                    <strong>{selectedProject?.title}</strong>
+                  </p>
+                </div>
+
                 <div className='space-y-1'>
                   <p>
                     <strong>Descripci&oacute;n:</strong>
@@ -252,8 +280,6 @@ const Projects = () => {
                 </div>
               </div>
             </div>
-
-            <div></div>
           </DialogContent>
         </Dialog>
       </>
