@@ -7,7 +7,11 @@ import {
 import { cn } from "@/lib/utils";
 import type { NavigationMenuProps } from "@radix-ui/react-navigation-menu";
 
-export const NavMenu = ({ className, ...props }: NavigationMenuProps) => (
+type MyNavigationMenuProps = NavigationMenuProps & {
+  closeSheet?: (open: boolean) => void;
+};
+
+export const NavMenu = ({ className, closeSheet, ...props }: MyNavigationMenuProps) => (
   <NavigationMenu
     className={cn("data-[orientation=vertical]:items-start", className)}
     {...props}
@@ -15,27 +19,37 @@ export const NavMenu = ({ className, ...props }: NavigationMenuProps) => (
     <NavigationMenuList className="gap-1 space-x-0 data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start">
       <NavigationMenuItem>
         <NavigationMenuLink asChild>
-          <a href="#about">Sobre m&iacute;</a>
+          <a href="#about" onClick={() => closeSheet && closeSheet(false)}>
+            Sobre m&iacute;
+          </a>
         </NavigationMenuLink>
       </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink asChild>
-          <a href="#skills">Habilidades</a>
+          <a href="#skills" onClick={() => closeSheet && closeSheet(false)}>
+            Habilidades
+          </a>
         </NavigationMenuLink>
       </NavigationMenuItem>
       {/* <NavigationMenuItem>
         <NavigationMenuLink asChild>
-          <a href="#experience">Experiencia</a>
+          <a href="#experience" onClick={() => closeSheet && closeSheet(false)}>
+            Experiencia
+          </a>
         </NavigationMenuLink>
       </NavigationMenuItem> */}
       <NavigationMenuItem>
         <NavigationMenuLink asChild>
-          <a href="#projects">Proyectos</a>
+          <a href="#projects" onClick={() => closeSheet && closeSheet(false)}>
+            Proyectos
+          </a>
         </NavigationMenuLink>
       </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink asChild>
-          <a href="#contact">Contacto</a>
+          <a href="#contact" onClick={() => closeSheet && closeSheet(false)}>
+            Contacto
+          </a>
         </NavigationMenuLink>
       </NavigationMenuItem>
     </NavigationMenuList>

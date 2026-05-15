@@ -23,6 +23,7 @@ import detailsSale from "@/assets/project-carousel-images/csg/details-sale.png";
 import allItems from "@/assets/project-carousel-images/csg/all-items.png";
 import allCustomers from "@/assets/project-carousel-images/csg/all-customers.png";
 import newCustomer from "@/assets/project-carousel-images/csg/new-customer.png";
+import { DialogDescription, DialogTitle } from "@radix-ui/react-dialog";
 
 const carouselImages: string[] = [loginSGC, ];
 
@@ -204,6 +205,8 @@ const Projects = () => {
       {/* Full-screen lightbox */}
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogContent className='flex flex-col justify-center p-0 gap-0 h-[calc(100vh-4rem)] min-w-[calc(100vw-1rem)] xl:min-w-[calc(100vw-4rem)]'>
+            <DialogTitle className="sr-only" />
+            <DialogDescription className="sr-only" />
 
             <div className="grid grid-cols-1 items-center xl:grid-cols-3 gap-4 p-4 pt-12 xl:pt-4 overflow-auto">
               {/* <div className="flex items-center xl:col-span-2 p-0"> */}
