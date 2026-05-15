@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
-import { ProjectCarousel } from "@/components/carousel";
+import { ProjectCarousel } from "@/components/project-carousel";
 import { GithubLogo } from "@/components/ui/icons";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { useState } from "react";
