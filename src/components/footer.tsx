@@ -1,5 +1,5 @@
 import { Separator } from "@/components/ui/separator"
-import { Linkedin } from "lucide-react";
+import { LinkedInLogo } from "./ui/icons";
 
 const footerLinks = [
   {
@@ -49,7 +49,7 @@ const Footer = () => {
 
           <div className="flex items-center gap-5 text-muted-foreground">
             <a href="https://www.linkedin.com/in/alejnd/" target="_blank">
-              <Linkedin className="h-5 w-5" />
+              <LinkedInLogo className="h-5 w-5" />
             </a>
           </div>
         </div>
