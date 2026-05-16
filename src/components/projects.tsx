@@ -70,20 +70,20 @@ type ProjectCardPropsWitthExtras = ProjectCardProps & {
 
 const projects = [
   {
-    title: "Sistema de gestión de contrataciones",
+    title: "Sistema de gestión de contrataciones para la FIA-UES",
     description:
       "Plataforma para automatizar el proceso de contratación de docentes en la FIA-UES.",
     problem:
-      "El proceso de contratación de docentes era manual, ineficiente y propenso a errores, lo que resultaba en retrasos y dificultades para gestionar las solicitudes.",
+      "El sistema existente estaba obsoleto, era deficiente en funcionalidad y propenso a errores, lo que producía insatisfacción y dificultades durante la gestión del proceso.",
     solution:
-      "Desarrollo de una plataforma web que automatiza el proceso de contratación, permitiendo a los docentes postularse en línea, a los administradores revisar y gestionar las solicitudes de manera eficiente.",
+      "Desarrollo de una nueva plataforma web que incorpore la amplia gama de funcionalidades solicitadas y solvente los problemas existentes.",
     impact:
-      "Reduje el tiempo de contratación y mejoré la satisfacción tanto de los docentes como de los administradores al proporcionar una experiencia más fluida y transparente.",
-    functionalities: ["Gestión de solicitudes", "Revisión y aprobación", "Notificaciones automáticas"],
+      "El nuevo sistema mejoró la satisfacción de los usuarios al proporcionar muchas nuevas funcionalidades, más control y más información de cada etapa del proceso y una experiencia más fluida y transparente.",
+    functionalities: ["Gestión de solicitudes.", "Revisión y aprobación en multiples etapas por personal de la facultad.", "Notificaciones automáticas.", "Gestión de usuarios y roles.", "Generación de reportes.", ],
     learning: 
-      "Aprendí a diseñar e implementar un sistema completo utilizando React para el frontend y Laravel para el backend, además de mejorar mis habilidades en gestión de proyectos y comunicación con stakeholders.",
+      "Adquirí experiencia en el desarrollo de sistemas muy masivos utilizando React y Laravel. Al trabajar estrechamente con otros desarrolladores fortalecí mis habilidad de trabajo en equipo. La comunicación con los stakeholders mejoró mi capacidad de traducir sus necesidades en implementaciones validas. Y obtuve experiencia en el proceso de reporte y corrección de bugs.",
     images: sgcImages,
-    technologies: ["React", "TypeScript", "React Router", "Redux", "Laravel", "PostgreSQL"],
+    technologies: ["React", "TypeScript", "React Router", "Redux", "Formik", "Laravel", "PostgreSQL"],
   },
   {
     title: "Sistema de inventario, compras y ventas para empresa CSGARAGE",
