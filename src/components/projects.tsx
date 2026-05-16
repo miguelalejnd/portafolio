@@ -10,6 +10,14 @@ import { useState } from "react";
 
 // 1. sgc:
 import loginSGC from "@/assets/project-carousel-images/sgc/login.png";
+import homeSGC from "@/assets/project-carousel-images/sgc/home.png";
+import hiringRequestsSGC from "@/assets/project-carousel-images/sgc/all-hiring-requests.png";
+import newHiringRequestSGC from "@/assets/project-carousel-images/sgc/hiring-request.png";
+import candidateHRSGC from "@/assets/project-carousel-images/sgc/hiring-request-candidate.png";
+import candidatesSGC from "@/assets/project-carousel-images/sgc/candidates.png";
+import initialFormSGC from "@/assets/project-carousel-images/sgc/initial-form.png";
+
+
 
 // 2. csg:
 import loginCSG from "@/assets/project-carousel-images/csg/login.png";
@@ -25,7 +33,7 @@ import allCustomers from "@/assets/project-carousel-images/csg/all-customers.png
 import newCustomer from "@/assets/project-carousel-images/csg/new-customer.png";
 import { DialogDescription, DialogTitle } from "@radix-ui/react-dialog";
 
-const carouselImages: string[] = [loginSGC, ];
+const sgcImages: string[] = [loginSGC, homeSGC, hiringRequestsSGC, newHiringRequestSGC, candidateHRSGC, candidatesSGC, initialFormSGC];
 
 const csgImages: string[] = [
   loginCSG,
@@ -74,7 +82,7 @@ const projects = [
     functionalities: ["Gestión de solicitudes", "Revisión y aprobación", "Notificaciones automáticas"],
     learning: 
       "Aprendí a diseñar e implementar un sistema completo utilizando React para el frontend y Laravel para el backend, además de mejorar mis habilidades en gestión de proyectos y comunicación con stakeholders.",
-    images: carouselImages,
+    images: sgcImages,
     technologies: ["React", "TypeScript", "React Router", "Redux", "Laravel", "PostgreSQL"],
   },
   {
