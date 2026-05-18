@@ -61,12 +61,12 @@ const Contact = () => {
             Cont&aacute;cteme v&iacute;a correo electr&oacute;nico
           </h2>
           <p className="text-muted-foreground mt-2 sm:mt-4 text-lg">
-            Si tiene alguna pregunta o desea discutir una posible colaboración, no dude en enviarme un mensaje. Estoy ansioso por escuchar de usted y explorar cómo podemos trabajar juntos.
+            Si tiene alguna pregunta o desea discutir una posible colaboración, no dude en enviarme un mensaje.
           </p>
         </div>
         <div className='space-y-8'>
           <div className='space-y-2'>
-            <Label htmlFor='name'>Su nombre</Label>
+            <Label htmlFor='name'>Nombre</Label>
             <Input
               {...register("name", {
                 required: "El nombre es requerido.",
@@ -87,7 +87,7 @@ const Contact = () => {
             )}
           </div>
           <div className='space-y-2'>
-            <Label htmlFor='email'>Su correo electr&oacute;nico</Label>
+            <Label htmlFor='email'>Correo electr&oacute;nico</Label>
             <Input
               {...register("email", {
                 required: "El correo electrónico es requerido.",

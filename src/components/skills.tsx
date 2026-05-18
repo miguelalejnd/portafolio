@@ -22,7 +22,7 @@ const skillCategories = {
       { name: 'Java', },
       { name: 'Spring Boot', },
       { name: 'Spring Security', },
-      { name: 'Spring JPA', },
+      { name: 'Spring JPA - Hibernate', },
     ]
   },
   Databases: {
